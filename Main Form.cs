@@ -13,8 +13,74 @@ namespace Amortization
 
         double loan, rebate, rate = 0, principalPayment, months, interest, pmt, sum_interest = 0, sum_principal = 0, sum_payment = 0, temp_in, temp_pri,temp_pay;
 
+        private void APRcomboBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8 || e.KeyChar == (char)Keys.Decimal);
+        }
+
+        private void APRcomboBox_Enter(object sender, EventArgs e)
+        {
+            APRcomboBox.SelectAll();
+        }
+
+        private void APRcomboBox_Click(object sender, EventArgs e)
+        {
+            APRcomboBox.SelectAll();
+        }
+
+        private void loan_amount_Click(object sender, EventArgs e)
+        {
+            loan_amount.SelectAll();
+        }
+
+        private void loan_amount_Enter(object sender, EventArgs e)
+        {
+            loan_amount.SelectAll();
+        }
+
+        private void rebate_amt_Click(object sender, EventArgs e)
+        {
+            rebate_amt.SelectAll();
+        }
+
+        private void rebate_amt_Enter(object sender, EventArgs e)
+        {
+            rebate_amt.SelectAll();
+        }
+
+        private void rebate_amt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8 || e.KeyChar== (char)Keys.Decimal);
+        }
+
+        private void loan_amount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(Char.IsNumber(e.KeyChar) || e.KeyChar == 8 || e.KeyChar == (char)Keys.Decimal);
+        }
+
+        private void month_groupBox_TextChanged(object sender, EventArgs e)
+        {
+            listBox.Items.Clear();
+        }
+
+        private void rebate_amt_TextChanged(object sender, EventArgs e)
+        {
+            listBox.Items.Clear();
+        }
+
+        private void APRcomboBox_TextChanged(object sender, EventArgs e)
+        {
+            listBox.Items.Clear();
+        }
+
+        private void loan_amount_TextChanged(object sender, EventArgs e)
+        {
+            listBox.Items.Clear();
+        }
+
         private void rebate_Check_CheckedChanged(object sender, EventArgs e)
         {
+            listBox.Items.Clear();
             if (rebate_Check.Checked)
             {
                 rebate_amt.Enabled = true;

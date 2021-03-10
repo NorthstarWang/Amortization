@@ -80,6 +80,10 @@ namespace Amortization
             this.loan_amount.Name = "loan_amount";
             this.loan_amount.Size = new System.Drawing.Size(113, 21);
             this.loan_amount.TabIndex = 1;
+            this.loan_amount.Click += new System.EventHandler(this.loan_amount_Click);
+            this.loan_amount.TextChanged += new System.EventHandler(this.loan_amount_TextChanged);
+            this.loan_amount.Enter += new System.EventHandler(this.loan_amount_Enter);
+            this.loan_amount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.loan_amount_KeyPress);
             // 
             // rebate_amt
             // 
@@ -89,6 +93,10 @@ namespace Amortization
             this.rebate_amt.Name = "rebate_amt";
             this.rebate_amt.Size = new System.Drawing.Size(113, 21);
             this.rebate_amt.TabIndex = 4;
+            this.rebate_amt.Click += new System.EventHandler(this.rebate_amt_Click);
+            this.rebate_amt.TextChanged += new System.EventHandler(this.rebate_amt_TextChanged);
+            this.rebate_amt.Enter += new System.EventHandler(this.rebate_amt_Enter);
+            this.rebate_amt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.rebate_amt_KeyPress);
             // 
             // month_groupBox
             // 
@@ -104,6 +112,7 @@ namespace Amortization
             this.month_groupBox.TabIndex = 5;
             this.month_groupBox.TabStop = false;
             this.month_groupBox.Text = "Loan Months";
+            this.month_groupBox.TextChanged += new System.EventHandler(this.month_groupBox_TextChanged);
             // 
             // two_years
             // 
@@ -183,7 +192,7 @@ namespace Amortization
             this.calculate.Name = "calculate";
             this.calculate.Size = new System.Drawing.Size(94, 69);
             this.calculate.TabIndex = 6;
-            this.calculate.Text = "Calculate Loan";
+            this.calculate.Text = "&Calculate Loan";
             this.calculate.UseVisualStyleBackColor = true;
             this.calculate.Click += new System.EventHandler(this.calculate_Click);
             // 
@@ -194,7 +203,7 @@ namespace Amortization
             this.accept.Name = "accept";
             this.accept.Size = new System.Drawing.Size(94, 61);
             this.accept.TabIndex = 7;
-            this.accept.Text = "Accept Loan";
+            this.accept.Text = "&Accept Loan";
             this.accept.UseVisualStyleBackColor = true;
             this.accept.Click += new System.EventHandler(this.accept_Click);
             // 
@@ -205,7 +214,7 @@ namespace Amortization
             this.display_all.Name = "display_all";
             this.display_all.Size = new System.Drawing.Size(94, 65);
             this.display_all.TabIndex = 8;
-            this.display_all.Text = "Display All Loans";
+            this.display_all.Text = "&Display All Loans";
             this.display_all.UseVisualStyleBackColor = true;
             this.display_all.Click += new System.EventHandler(this.display_all_Click);
             // 
@@ -217,7 +226,7 @@ namespace Amortization
             this.exit.Name = "exit";
             this.exit.Size = new System.Drawing.Size(94, 58);
             this.exit.TabIndex = 9;
-            this.exit.Text = "Exit";
+            this.exit.Text = "&Exit";
             this.exit.UseVisualStyleBackColor = true;
             this.exit.Click += new System.EventHandler(this.exit_Click);
             // 
@@ -250,12 +259,17 @@ namespace Amortization
             this.APRcomboBox.Name = "APRcomboBox";
             this.APRcomboBox.Size = new System.Drawing.Size(113, 20);
             this.APRcomboBox.TabIndex = 2;
+            this.APRcomboBox.TextChanged += new System.EventHandler(this.APRcomboBox_TextChanged);
+            this.APRcomboBox.Click += new System.EventHandler(this.APRcomboBox_Click);
+            this.APRcomboBox.Enter += new System.EventHandler(this.APRcomboBox_Enter);
+            this.APRcomboBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.APRcomboBox_KeyPress);
             // 
             // listBox
             // 
             this.listBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.listBox.Font = new System.Drawing.Font("Courier New", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listBox.FormattingEnabled = true;
-            this.listBox.ItemHeight = 12;
+            this.listBox.ItemHeight = 17;
             this.listBox.Location = new System.Drawing.Point(29, 204);
             this.listBox.MultiColumn = true;
             this.listBox.Name = "listBox";
